@@ -23,24 +23,27 @@ namespace КурсовойПроект
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {   
-            //информация об ошибках
+        {
+            //пометка ошибок
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
+            //подключение поддержки статичных файлов в приложении (css, js и т.д.)
+            app.UseStaticFiles();
+
+            //подключение системы маршрутизации
             app.UseRouting();
 
-                //подключение поддержки статичных файлов в приложении (css js и тд)
-                app.UseStaticFiles();
-            //регистрация нужных маршрутов или эндпоинтов
+            //подключение аутентификации и авторизации
+            app.UseCookiePolicy();
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            //регистрация нужных маршрутов (ендпоинты)
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                });
+                endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
