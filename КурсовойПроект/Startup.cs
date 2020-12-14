@@ -6,16 +6,21 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using КурсовойПроект.Service;
 
 namespace КурсовойПроект
 {
     public class Startup
     {
-        
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration) => Configuration = configuration;
         public void ConfigureServices(IServiceCollection services)
         {
+            //подключаем конфиг из appsetting.json
+            Configuration.Bind("Project", new Config());
             // поддержка контроллеров и представлений MVC
             services.AddControllersWithViews()
                 //выставление совместимости с asp.net core 3.0
