@@ -6,11 +6,11 @@ using КурсовойПроект.Domain.Entities;
 
 namespace КурсовойПроект.Domain.Repositories.Abstract
 {
-    public class IServiceItemsRepository
+    public interface IServiceItemsRepository
     {
         IQueryable<ServiceItem> GetServiceItems();
         ServiceItem GetServiceItemById(Guid id);
-        void SaveServiceItem(ServiceItem entity){}
-        void DeleteServiceItem(Guid id){}
+        void SaveServiceItem(ServiceItem entity);
+        void DeleteServiceItem(Guid id);
     }
 }

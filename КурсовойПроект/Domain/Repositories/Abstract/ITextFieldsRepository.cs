@@ -6,12 +6,12 @@ using КурсовойПроект.Domain.Entities;
 
 namespace КурсовойПроект.Domain.Repositories.Abstract
 {
-    public class ITextFieldsRepository
+    public interface ITextFieldsRepository
     {
-        IQueryable<TextField> getTextFields();
-        TextField getTextFieldById(Guid id);
+        IQueryable<TextField> GetTextFields();
+        TextField GeTextFieldById(Guid id);
         TextField GetTextFieldByCodeWord(string codeWord);
-        void SaveTextField(TextField entity){}
-        void DeleteTextField(Guid id){}
+        void SaveTextField(TextField entity) { }
+        void DeleteTextField(Guid id) { }
     }
 }
