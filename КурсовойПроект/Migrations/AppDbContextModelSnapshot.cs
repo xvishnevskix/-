@@ -3,10 +3,10 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+
 using КурсовойПроект.Domain;
 
-namespace КурсовойПроект.Migrations
+namespace MyCompany.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -15,9 +15,9 @@ namespace КурсовойПроект.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
+                .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -29,18 +29,18 @@ namespace КурсовойПроект.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
+                        .HasName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
@@ -48,8 +48,8 @@ namespace КурсовойПроект.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "817F6C5F-3636-4120-A2EA-104449CD5834",
-                            ConcurrencyStamp = "873363fc-412d-4166-ac44-f5ba58aad835",
+                            Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
+                            ConcurrencyStamp = "1c07fb23-ced7-48f9-bf0a-e0df233cd7a3",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -60,7 +60,7 @@ namespace КурсовойПроект.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -92,8 +92,8 @@ namespace КурсовойПроект.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -105,12 +105,12 @@ namespace КурсовойПроект.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -128,17 +128,17 @@ namespace КурсовойПроект.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
+                        .HasName("EmailIndex");
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
+                        .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
@@ -146,15 +146,15 @@ namespace КурсовойПроект.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "B3E76A8D-5D72-4B3D-AFE3-A2E79E687F93",
+                            Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d42a11ee-2809-4615-8a62-c4fe0bedf1ea",
-                            Email = "my@emil.ru",
+                            ConcurrencyStamp = "091be5bf-9d58-40e6-98a8-e82859894571",
+                            Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOQ9mFrFQJD2SFJuj3G/MmUn/h29KNMsFMTIr8qepV0iyzjfbOcUKHH3XklZBWN0Nw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECBA6mt3xGNgyLjwyRhhtI3PI2IBKsm00Y3bAJfjdVrgT0++e45OV5Vh4SLTLPDHEQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -167,7 +167,7 @@ namespace КурсовойПроект.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -225,8 +225,8 @@ namespace КурсовойПроект.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "80E85395-7C25-4491-B873-4F658A1FB85F",
-                            RoleId = "2F82E073-411A-4E76-B784-6E2E1584F28F"
+                            UserId = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
+                            RoleId = "44546e06-8719-4ad8-b88a-f271ae9d6eab"
                         });
                 });
 
@@ -249,7 +249,7 @@ namespace КурсовойПроект.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("КурсовойПроект.Domain.Entities.ServiceItem", b =>
+            modelBuilder.Entity("MyCompany.Domain.Entities.ServiceItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -259,6 +259,9 @@ namespace КурсовойПроект.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("MetaDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MetaKeywords")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MetaTitle")
@@ -282,7 +285,7 @@ namespace КурсовойПроект.Migrations
                     b.ToTable("ServiceItems");
                 });
 
-            modelBuilder.Entity("КурсовойПроект.Domain.Entities.TextField", b =>
+            modelBuilder.Entity("MyCompany.Domain.Entities.TextField", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -296,6 +299,9 @@ namespace КурсовойПроект.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("MetaDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MetaKeywords")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MetaTitle")
@@ -320,25 +326,25 @@ namespace КурсовойПроект.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4428838e-be1d-4c57-9275-98cb7daa3294"),
+                            Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2020, 12, 16, 16, 6, 52, 853, DateTimeKind.Utc).AddTicks(3348),
+                            DateAdded = new DateTime(2020, 2, 8, 6, 13, 50, 96, DateTimeKind.Utc).AddTicks(9537),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
                         new
                         {
-                            Id = new Guid("b6d9259c-4053-4a5b-8eb6-47306832cf62"),
+                            Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2020, 12, 16, 16, 6, 52, 853, DateTimeKind.Utc).AddTicks(5031),
+                            DateAdded = new DateTime(2020, 2, 8, 6, 13, 50, 97, DateTimeKind.Utc).AddTicks(2218),
                             Text = "Содержание заполняется администратором",
                             Title = "Наши услуги"
                         },
                         new
                         {
-                            Id = new Guid("309d7fc1-5eb2-4a24-93e4-ae222692a1fb"),
+                            Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2020, 12, 16, 16, 6, 52, 853, DateTimeKind.Utc).AddTicks(5099),
+                            DateAdded = new DateTime(2020, 2, 8, 6, 13, 50, 97, DateTimeKind.Utc).AddTicks(2284),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
