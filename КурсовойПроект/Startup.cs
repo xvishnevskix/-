@@ -56,13 +56,16 @@ namespace КурсовойПроект
                 options.SlidingExpiration = true;
             });
 
-            //настраиваем политику авторизации для Admin area
+            //настраиваем политику авторизации для Admin area (требуем от пользователя роль админа)
             services.AddAuthorization(x =>
             {
                 x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
             });
             // поддержка контроллеров и представлений MVC
-            services.AddControllersWithViews()
+            services.AddControllersWithViews(x =>
+                {
+                    x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+                })
                 //выставление совместимости с asp.net core 3.0
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
         }
