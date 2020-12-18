@@ -7,7 +7,6 @@
   <ItemGroup>
     <Content Remove="bundleconfig.json" />
     <Content Remove="compilerconfig.json" />
-    <Content Remove="Views\Shared\CssPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +21,12 @@
     <None Include="compilerconfig.json" />
     <None Include="Views\Account\Login.cshtml" />
     <None Include="Views\Shared\CssPartial.cshtml" />
+    <None Include="Views\Shared\FooterPartial.cshtml" />
+    <None Include="Views\Shared\HeaderPartial.cshtml" />
+    <None Include="Views\Shared\.cshtml" />
+    <None Include="Views\Shared\ScriptsPartial.cshtml" />
+    <None Include="Views\Shared\SideBarPartial.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
