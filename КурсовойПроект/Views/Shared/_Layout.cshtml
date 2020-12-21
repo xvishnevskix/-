@@ -2,8 +2,9 @@
 <html>
 <head>
     @await Html.PartialAsync("MetatagPartial")
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
     <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true" />
-    @*@await Html.PartialAsync("CssPartial")*@
+    @await Html.PartialAsync("CssPartial")
 </head>
 <body>
 <div id="page-wrapper">

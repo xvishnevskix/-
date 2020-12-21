@@ -1,4 +1,5 @@
-﻿@model КурсовойПроект.Models.LoginViewModel 
+﻿@model КурсовойПроект.Models.LoginViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <div>
     <h1>Вход в личный кабинет</h1>
     <div class="div-box">
@@ -17,7 +18,7 @@
             <div>
                 <label asp-for="RememberMe"></label>
                 <input asp-for="RememberMe" />
-            <span asp-validation-for="RememberMe"></span>
+                <span asp-validation-for="RememberMe"></span>
             </div>
             <div>
                 <input type="submit" value="Войти" />
