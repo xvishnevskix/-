@@ -30,7 +30,8 @@ namespace КурсовойПроект
             //подключаем нужный функционал приложения в качестве сервисов
             services.AddTransient<ITextFieldsRepository, EFTextFieldsRepository>();
             services.AddTransient<IServiceItemsRepository, EFServiceItemsRepository>();
-            services.AddTransient<DataViewManager>();
+            services.AddTransient<DataManager>();
+            
 
             //подключаем контекст БД
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Config.ConnectionString));
