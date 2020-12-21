@@ -14,7 +14,7 @@ namespace КурсовойПроект.Models
             public string UserName { get; set; }
 
             [Required]
-            [UIHint("Password")]
+            [UIHint("password")]
             [Display(Name = "Пароль")]
             public string Password { get; set; }
 

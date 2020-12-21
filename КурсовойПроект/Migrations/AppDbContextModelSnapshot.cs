@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 using КурсовойПроект.Domain;
 
-namespace MyCompany.Migrations
+namespace КурсовойПроект.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot

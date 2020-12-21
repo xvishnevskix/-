@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using КурсовойПроект.Domain;
 
-namespace MyCompany.Migrations
+namespace КурсовойПроект.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20200208061350__initial")]

@@ -19,6 +19,7 @@ namespace КурсовойПроект.Controllers
                 userManager = userMgr;
                 signInManager = signinMgr;
             }
+
         //передаём в качестве модели в представление LoginViewModel
             [AllowAnonymous]
             public IActionResult Login(string returnUrl)
@@ -26,6 +27,7 @@ namespace КурсовойПроект.Controllers
                 ViewBag.returnUrl = returnUrl;
                 return View(new LoginViewModel());
             }
+
             [HttpPost]
             [AllowAnonymous]
             public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
