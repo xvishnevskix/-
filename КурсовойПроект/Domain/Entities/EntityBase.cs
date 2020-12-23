@@ -31,6 +31,9 @@ namespace КурсовойПроект.Domain.Entities
         [Display(Name = "SEO метатег Description")]
         public virtual string MetaDescription { get; set; }
 
+        [Display(Name = "SEO метатег Keywords")]
+        public string MetaKeywords { get; set; }
+
         [DataType(DataType.Time)]
         public DateTime DateAdded { get; set; }
     }

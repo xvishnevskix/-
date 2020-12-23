@@ -36,6 +36,8 @@ namespace КурсовойПроект.Domain.Repositories.EntityFramework
             if (entity.Id == default)
                 context.Entry(entity).State = EntityState.Added;
             else
+            //если идентификатор не дефолтный, уже есть в базе данных, то для контекста EF помечаем запись,
+            //что она модифицирована, в базу данных не добавится, но будут изменены значения её свойств
                 context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
         }
