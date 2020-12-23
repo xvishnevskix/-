@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace КурсовойПроект.Service 
 {
+    //если для какого-либо контроллера в области админ встречается атрибут area, то в этом случае подключаем авторизацию
+    //и аутентификацию, и в startupcs определили правило, что пользователь должен состоять в роли admin
+    //все неавторизованные пользователи направляются по пути /account/login, где они направляются для ввода своих данных. Если он их ввёл правильно, он отправляется к панели администратора
     public class AdminAreaAuthorization : IControllerModelConvention
     {
         private readonly string area;
