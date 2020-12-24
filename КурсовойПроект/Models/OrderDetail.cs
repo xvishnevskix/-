@@ -14,7 +14,7 @@ namespace КурсовойПроект.Models
 		public int itemID { get; set; }
 		public ushort price { get; set; }
 
-		public virtual ServiceItem serviceitem { get; set; }
+		public virtual ServiceItem serviceItem { get; set; }
 		public virtual Order order { get; set; }
 		
 	}

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using КурсовойПроект.Domain.Entities;
+using КурсовойПроект.Models;
 
 namespace КурсовойПроект.Domain
 {
@@ -15,6 +16,9 @@ namespace КурсовойПроект.Domain
 
         public DbSet<TextField> TextFields { get; set; }
         public DbSet<ServiceItem> ServiceItems { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -44,9 +48,9 @@ namespace КурсовойПроект.Domain
            
             modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
-                RoleId = "2F82E073-411A-4E76-B784-6E2E1584F28F",
-                UserId = "80E85395-7C25-4491-B873-4F658A1FB85F"
-                
+                RoleId = "817F6C5F-3636-4120-A2EA-104449CD5834",
+                UserId = "B3E76A8D-5D72-4B3D-AFE3-A2E79E687F93"
+
             });
 
             
