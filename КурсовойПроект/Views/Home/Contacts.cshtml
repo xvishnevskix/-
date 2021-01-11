@@ -4,7 +4,35 @@
 	ViewBag.Description = Model.MetaDescription;
 	ViewBag.Keywords = Model.MetaKeywords;
 }
+<div class="row">
+	
+	<div class="col-md-6">
+		<div id="map" style="height:500px; width:750px;"></div>
+		<script>
+			let map;
 
+			function initMap() {
+				map = new google.maps.Map(document.getElementById("map"), {
+					center: { lat: 55.83367052833682, lng: 37.53669278911597 , },
+					zoom: 16,
+				});
+			}
+			var myLatlng = new google.maps.LatLng(55.833670, 37.536692);
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title: 'Станции метро'
+			});
+
+			
+			marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key= @(ViewData["MyKey"])&callback=initMap&libraries=&v=weekly"
+				defer></script>
+	</div>
+
+</div>
 
 <div>
 	@Html.Raw(Model.Text)

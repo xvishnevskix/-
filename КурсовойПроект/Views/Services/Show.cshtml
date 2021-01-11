@@ -9,18 +9,13 @@
     <h2>
         @Model.Title
     </h2>
-	<h2>
-		@Model.Subtitle
-	</h2>
-	<h2>
-		@Model.Price
-	</h2>
-	<div>
-		<img class="img-block" src="~/images/@Model.TitleImagePath" />
-	</div>
-	
+    <h2>
+        @Model.Subtitle
+    </h2>
+    <div>
+        <img class="img-block" src="~/images/@Model.TitleImagePath" />
+    </div>
 </div>
 <div>
-	@Html.Raw(Model.Text)
-	<p><a class="btn btn-warning" href="#">Подробнее</a></p>
+    @Html.Raw(Model.Text)
 </div>

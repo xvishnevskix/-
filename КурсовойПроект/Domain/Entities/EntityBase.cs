@@ -22,12 +22,8 @@ namespace КурсовойПроект.Domain.Entities
         [Display(Name = "Полное описание")]
         public virtual string Text { get; set; }
 
-        [Display(Name = "Титульная картинка")] 
+        [Display(Name = "Титульная картинка")]
         public virtual string TitleImagePath { get; set; }
-
-
-        [Display(Name = "Цена")]
-        public virtual string Price{ get; set; }
 
         [Display(Name = "SEO метатег Title")]
         public virtual string MetaTitle { get; set; }

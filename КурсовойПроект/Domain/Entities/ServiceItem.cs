@@ -19,8 +19,5 @@ namespace КурсовойПроект.Domain.Entities
         [Display(Name = "Полное описание услуги")]
         public override string Text{ get; set; }
 
-        [Display(Name = "Цена")]
-        public override string Price { get; set; }
-
     }
 }
